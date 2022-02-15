@@ -1,0 +1,14 @@
+	ADD R0, R0, #3
+	ADD R1, R1, #0x000000ff
+	STR R0,[R1]
+	SUB R2, R0, #1
+	ORRS R0, R0, R2
+	BEQ branch
+	BIC R0, R2, R0
+	LDR R0, [R1]
+branch	SUB R2, R0, #7
+	EOR R0, R0, R1
+	B finish
+	ADD R2, R0, #1
+	ADD R2, R0, #1
+finish  ADD R2, R2, #4
